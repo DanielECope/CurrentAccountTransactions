@@ -9,4 +9,5 @@ public interface CurrentAccountTransactionsService {
     public Mono<CurrentAccountTransactions> findById(String id);
     public Mono<CurrentAccountTransactions> create(CurrentAccountTransactions t);
     public Mono<CurrentAccountTransactions> findBySavingAccountNumberAccount(String NumberAccount);
+    public Mono<CurrentAccountTransactions> findByAccountNumber(String accountNumber);
 }

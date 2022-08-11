@@ -65,6 +65,12 @@ public class CurrentAccountTransactionsImpl implements CurrentAccountTransaction
     public Mono<CurrentAccountTransactions> findBySavingAccountNumberAccount(String NumberAccount) {
         return null;
     }
+
+    @Override
+    public Mono<CurrentAccountTransactions> findByAccountNumber(String accountNumber) {
+        return repository.findByAccountNumber(accountNumber);
+    }
+
     public Mono<CurrentAccount> findByCurrentAccountMono(String accountNumber){
         log.info("SavingAccountTransactionImpl: implements findBySavingAccountMono() method : {}",accountNumber);
         return webClientCat.get().uri("/findByAccountNumber/{accountNumber}",accountNumber)
